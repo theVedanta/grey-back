@@ -27,7 +27,7 @@ router.get("/contacts", async (req, res) => {
 })
 
 router.get("/members", async (req, res) => {
-    let members = await Members.find()
+    let members = await Members.find().sort({ pos: 1 });
     res.json({members: members});
 })
 

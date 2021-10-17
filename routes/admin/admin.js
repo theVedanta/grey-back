@@ -62,7 +62,7 @@ router.get("/faq", async (req, res) => {
 });
 
 router.get("/members", async (req, res) => {
-  let members = await Members.find();
+  let members = await Members.find().sort({ pos: 1 });
   // res.send(members);
   res.render("manage/members", { members: members });
 });
@@ -226,6 +226,7 @@ router.post("/add-member", upload.single("img"), async (req, res) => {
     socials: socials,
     image: filename,
     class: body.class,
+    pos: parseInt(body.pos),
   });
 
   try {
@@ -465,6 +466,7 @@ router.put("/edit-members/:id", upload.single("img"), async (req, res) => {
                   socials: socials,
                   class: body.class,
                   image: filename,
+                  pos: parseInt(body.pos),
                 },
               }
             );
@@ -480,6 +482,7 @@ router.put("/edit-members/:id", upload.single("img"), async (req, res) => {
             event: body.event,
             socials: socials,
             class: body.class,
+            pos: parseInt(body.pos),
           },
         }
       );

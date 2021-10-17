@@ -15,6 +15,9 @@ const MemberSchema = new Schema({
         required: true
     },
     socials: Array,
+    pos: { 
+        type: Number
+    },
     image: String
 });
 
