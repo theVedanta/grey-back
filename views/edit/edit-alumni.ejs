@@ -11,6 +11,12 @@
         <input type="text" name="name" value="<%= alumni.name %>">
         <input type="text" name="post" value="<%= alumni.post %>">
         <input type="number" name="year" value="<%= alumni.year %>">
+        <input
+          type="number"
+          placeholder="Position on page"
+          name="pos"
+          value="<%= member.pos %>"
+        />
         <textarea name="current" cols="30" rows="10"><%= alumni.current %></textarea>
         <div class="socials">
             <% for (let i=0; i < alumni.socials.length; i++) { %>

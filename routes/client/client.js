@@ -12,7 +12,7 @@ router.get("/", (req, res) => {
 })
 
 router.get("/alumni", async (req, res) => {
-    let alumnis = await Alumni.find()
+    let alumnis = await Alumni.find().sort({pos: 1})
     res.json({alumnis: alumnis});
 })
 

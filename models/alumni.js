@@ -13,7 +13,10 @@ const AlumniSchema = new Schema({
     current: String,
     year: Number,
     socials: Array,
-    image: String
+    image: String,
+    pos: { 
+        type: Number
+    },
 });
 
 module.exports = mongoose.model("Alumni", AlumniSchema);
