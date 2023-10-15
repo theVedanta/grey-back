@@ -68,13 +68,7 @@ app.use("/logout", authRoute, logout);
 const events = require("./routes/admin/events");
 app.use("/admin/events", events);
 
-// Errors
-app.get("*", (req, res) => {
-  res.render("client/404");
-});
-
 // Sign up
-
 const User = require("./models/user");
 
 app.get("/signup", (req, res) => {
@@ -101,6 +95,11 @@ app.post("/signup", async (req, res) => {
     console.log(err);
     return res.render("auth/signup", { error: "error" });
   }
+});
+
+// Errors
+app.get("*", (req, res) => {
+  res.render("client/404");
 });
 
 // Port Listening
